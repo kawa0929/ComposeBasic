@@ -84,11 +84,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 text = x.value.toString(),
                 fontSize = 50.sp,
                 modifier = modifier.clickable {
-                    x.value++ // 點擊計數器增加1
+                    x.value++
                 }
             )
 
-            // 將乘以2的功能移到按鈕中
+
             Button(
                 onClick = { x.value *= 2 },
                 modifier = Modifier.padding(top = 16.dp)
@@ -101,7 +101,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 color = Color.Black,
                 fontSize = 50.sp,
                 fontFamily = FontFamily(Font(R.font.hand)),
-                modifier = modifier.padding(top = 16.dp) // 增加上邊距
+                modifier = modifier.padding(top = 16.dp)
             )
         }
 
@@ -110,7 +110,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             contentDescription = "薩摩耶犬~",
             alpha = 0.7f,
             modifier = Modifier
-                .align(Alignment.TopEnd) // 將圖片放到右上角
+                .align(Alignment.TopEnd)
                 .clip(CircleShape)
         )
 
@@ -119,9 +119,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             contentDescription = "黃金獵犬~",
             alpha = 0.7f,
             modifier = Modifier
-                .align(Alignment.BottomCenter) // 將圖片放到底部中央
+                .align(Alignment.BottomCenter)
                 .clip(CircleShape)
-                .padding(bottom = 16.dp) // 增加底部邊距
+                .padding(bottom = 16.dp)
         )
     }
 }
