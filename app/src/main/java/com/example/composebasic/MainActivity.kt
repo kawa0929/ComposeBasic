@@ -62,7 +62,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     ) {
 
         Column(
-            modifier = Modifier.padding(start = 16.dp, bottom = 16.dp), // 左下邊距
+            modifier = Modifier.padding(start = 16.dp, bottom = 16.dp),
             horizontalAlignment = Alignment.Start
         ) {
 
@@ -70,7 +70,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 onClick = {
                     x.value = 0
                 },
-                modifier = Modifier.padding(bottom = 16.dp) // 增加下邊距
+                modifier = Modifier.padding(bottom = 16.dp)
             ) {
                 Text("歸零")
                 Image(
@@ -80,13 +80,21 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 )
             }
 
-
             Text(
                 text = x.value.toString(),
                 fontSize = 50.sp,
-                modifier = modifier.clickable { x.value++ }
+                modifier = modifier.clickable {
+                    x.value++ // 點擊計數器增加1
+                }
             )
 
+            // 將乘以2的功能移到按鈕中
+            Button(
+                onClick = { x.value *= 2 },
+                modifier = Modifier.padding(top = 16.dp)
+            ) {
+                Text("乘以2")
+            }
 
             Text(
                 text = stringResource(R.string.author),
@@ -97,7 +105,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             )
         }
 
-
         Image(
             painter = painterResource(id = R.drawable.dog),
             contentDescription = "薩摩耶犬~",
@@ -106,7 +113,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 .align(Alignment.TopEnd) // 將圖片放到右上角
                 .clip(CircleShape)
         )
-
 
         Image(
             painter = painterResource(id = R.drawable.dog2),
@@ -119,6 +125,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         )
     }
 }
+
+
+
+
 
 
 
